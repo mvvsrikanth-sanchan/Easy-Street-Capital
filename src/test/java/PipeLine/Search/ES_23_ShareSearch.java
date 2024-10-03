@@ -40,40 +40,58 @@ public class ES_23_ShareSearch {
 	  Share.executeScript("arguments[0].click();",ShareSearch);
 	  Thread.sleep(3000);
 	  // Share Button
-	 WebElement  ShareButton = driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div[2]/div/div/div/div/div[3]/div/div[2]/div[2]/div/div[3]/div/button"));
+	 WebElement  ShareButton = driver.findElement(By.id("sharesearch-share"));
 	 JavascriptExecutor Button = (JavascriptExecutor)driver;
-	 Button.executeAsyncScript("arguments[0].click();", ShareButton);
+	 Button.executeScript("arguments[0].click();", ShareButton);
 	 System.out.println("Validation displayed");
-	  Thread.sleep(5000);
-	  //All Views
-	  WebElement  AllViews = driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div[2]/div/div/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[2]"));
+	  Thread.sleep(3000);
+	  //Back button'
+	  WebElement  backButton = driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div[2]/div/div/div/div/div[3]/div/div[2]/div[1]/button/span"));
+		 JavascriptExecutor back = (JavascriptExecutor)driver;
+		 back.executeScript("arguments[0].click();", backButton);
+		 System.out.println("Navigated Back");
+		 Thread.sleep(3000);
+		 ShareSearch.click();
+		 Thread.sleep(3000);
+	  //All Views 
+	  WebElement  AllViews = driver.findElement(By.id("sharesearch-allviews"));
 	  JavascriptExecutor Views = (JavascriptExecutor)driver;
 	  Views.executeScript("arguments[0].click();", AllViews);
+	  
 	 
-	  AllViews.sendKeys(Keys.ARROW_DOWN);
-	  AllViews.sendKeys(Keys.ARROW_DOWN);
-	  AllViews.sendKeys(Keys.ARROW_UP);
+	  AllViews.sendKeys("SANCHA");
+	 // AllViews.sendKeys(Keys.ARROW_DOWN);
+	//  AllViews.sendKeys(Keys.ARROW_UP);
 	  AllViews.sendKeys(Keys.ENTER);
 	  // Share Button
-	  ShareButton.click();
-	  System.out.println("Validation displayed For EveryOne");
-	  AllViews.clear(); 
 	  Thread.sleep(3000);
-	  driver.navigate().refresh();
+	  WebElement  ShareButton1 = driver.findElement(By.id("sharesearch-share"));
+		 JavascriptExecutor Button1 = (JavascriptExecutor)driver;
+		 Button1.executeScript("arguments[0].click();", ShareButton1);
+	  System.out.println("Validation displayed For EveryOne");
+	 
+	  Thread.sleep(3000);
+	 // driver.navigate().refresh();
 	  //Everyone
-	  WebElement  Everyone = driver.findElement(By.className("null css-b62m3t-container"));
+	  WebElement  ClearAllview = driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div[2]/div/div/div/div/div[3]/div/div[2]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[1]/div[2]"));
+		 JavascriptExecutor Allview = (JavascriptExecutor)driver;
+		 Allview.executeScript("arguments[0].click();", ClearAllview);
+	  Thread.sleep(3000);
+	  WebElement  Everyone = driver.findElement(By.xpath("//*[@id=\"react-select-5-placeholder\"]"));
 	  JavascriptExecutor EveryOne1 = (JavascriptExecutor)driver;
 	  EveryOne1.executeScript("arguments[0].click();", Everyone);
-	  Everyone.click();
-	  Everyone.sendKeys(Keys.ARROW_DOWN);
-	  Everyone.sendKeys(Keys.ARROW_DOWN);
-	  Everyone.sendKeys(Keys.ARROW_UP);
-	  Everyone.sendKeys(Keys.ENTER);
+	  
+	  Everyone.sendKeys("teja ch");
+	//  Everyone.sendKeys(Keys.ARROW_DOWN);
+	 // Everyone.sendKeys(Keys.ARROW_UP);
+	 // Everyone.sendKeys(Keys.ENTER);
 	  // Share Button
-	  ShareButton.click();
+	  WebElement  ShareButton2 = driver.findElement(By.id("sharesearch-share"));
+		 JavascriptExecutor Button2 = (JavascriptExecutor)driver;
+		 Button2.executeScript("arguments[0].click();", ShareButton2);
 	  System.out.println("Validation displayed For All Viwes");
 	  // SINGLE VIEW WITH SINGLE EVERYONE
-	  AllViews.sendKeys(Keys.ARROW_DOWN);
+	  AllViews.sendKeys("SANCHA");
 	  AllViews.sendKeys(Keys.ENTER);
 	  Thread.sleep(3000);
 	  Everyone.sendKeys("srikanth mvv");

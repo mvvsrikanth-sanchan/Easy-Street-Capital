@@ -49,9 +49,54 @@ JavascriptExecutor Servicing_Setup= (JavascriptExecutor)driver;
 Servicing_Setup.executeScript("arguments[0].click();", ServicingSetup);
 Thread.sleep(5000);
 //LOAN SETUP
-WebElement unlockSetup = driver.findElement(By.id("unlockbtn"));
-JavascriptExecutor unlock_Setup= (JavascriptExecutor)driver;
-unlock_Setup.executeScript("arguments[0].click();", unlockSetup);
+// Locate the button 
+WebElement Unlockbutton = driver.findElement(By.id("saveandlockbtn"));
+JavascriptExecutor Unlock_Setup= (JavascriptExecutor)driver;
+Unlock_Setup.executeScript("arguments[0].click();", Unlockbutton);
+
+if (Unlockbutton.isEnabled()) {
+    System.out.println("Button is unlocked. Proceeding with further automation...");
+    
+        
+} else {
+    System.out.println("Button is locked. Attempting to unlock...");
+    enableButton(driver);
+    if (Unlockbutton.isEnabled()) {
+        System.out.println("Button is now enabled. Proceeding with further automation...");
+        Unlockbutton.click();
+        // Add further test steps here
+    } else {
+        System.out.println("Button could not be enabled.");
+    }
+}
+    Thread.sleep(3000);
+    
+    /*
+
+/////////////////////////////////////////
+WebElement unlocked = driver.findElement(By.id("savebtn"));
+//JavascriptExecutor unlock_Setup= (JavascriptExecutor)driver;
+//unlock_Setup.executeScript("arguments[0].click();", unlockSetup);
+Thread.sleep(3000);
+if (unlocked.isEnabled()) {
+    System.out.println("Button is unlocked. Proceeding with automation.");
+
+    // Perform actions as the button is unlocked
+  JavascriptExecutor unlock_Setup= (JavascriptExecutor)driver;
+    unlock_Setup.executeScript("arguments[0].click();", unlocked);
+    // Add further automation steps here
+
+} else {
+	WebElement unlockSetup = driver.findElement(By.id("unlockbtn"));
+	if (unlockSetup.isEnabled()) {
+		System.out.println("Button is locked. Automation will not proceed.");
+		JavascriptExecutor unlock_Setup= (JavascriptExecutor)driver;
+	    unlock_Setup.executeScript("arguments[0].click();", unlockSetup);
+		unlockSetup.click();
+	}
+    
+}
+
 Thread.sleep(3000);
 WebElement closePopup = driver.findElement(By.id("closePopupBtn"));
 JavascriptExecutor close_Popup= (JavascriptExecutor)driver;
@@ -113,6 +158,12 @@ Payment_Setup1.executeScript("arguments[0].click();", PaymentSetup1);
 Thread.sleep(2000);
 driver.navigate().refresh();
 Thread.sleep(2000);
-driver.quit();
+driver.quit();*/
   }
-}
+
+
+private void enableButton(ChromeDriver driver) {
+	// TODO Auto-generated method stub
+	WebElement unlockButton = driver.findElement(By.id("unlockbtn"));
+    unlockButton.click();
+}}

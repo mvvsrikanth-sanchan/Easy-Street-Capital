@@ -1,9 +1,14 @@
 package PipeLine.Search;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class ES_22_MostRecentLoans {
@@ -31,13 +36,23 @@ public class ES_22_MostRecentLoans {
 		 driver.findElement(By.id("loginPassword")).sendKeys("Sanchan@123");
 		
 	    driver.findElement(By.id("loginButton")).click();
+	    Thread.sleep(5000);
+	    WebDriverWait RecentLoans = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    RecentLoans.until(ExpectedConditions.elementToBeClickable(By.id("mostRecentLoans"))).click();
+	 /*  WebElement RecentLoans = driver.findElement(By.id("mostRecentLoans"));
+	   JavascriptExecutor Loans =(JavascriptExecutor)driver;
+	   Loans.executeScript("arguments[0].click();", RecentLoans);*/
+	    WebElement RecentLoan = driver.findElement(By.id("mostRecentLoans"));
 	    Thread.sleep(2000);
-	   WebElement RecentLoans = driver.findElement(By.id("mostRecentLoans"));
-	   RecentLoans.click();
-	   for (int i=1;i<3;i++) {
-	   RecentLoans.sendKeys(Keys.ARROW_DOWN);}
+	   RecentLoan.sendKeys(Keys.ARROW_DOWN);
+	   Thread.sleep(2000);
+	   RecentLoan.sendKeys(Keys.ENTER);
 	   Thread.sleep(3000);
-	   driver.findElement(By.className("material-icons icon")).click();
+	   WebElement closePipeline = driver.findElement(By.id("closePipelineBtn"));
+	   JavascriptExecutor close_Pipeline =(JavascriptExecutor)driver;
+	   close_Pipeline.executeScript("arguments[0].click();", closePipeline);
+	   
+	  
 	   
   }
 }

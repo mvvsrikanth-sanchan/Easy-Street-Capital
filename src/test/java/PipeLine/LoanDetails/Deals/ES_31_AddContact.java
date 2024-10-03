@@ -61,6 +61,11 @@ public class ES_31_AddContact {
 	     JavascriptExecutor ContactMenu = (JavascriptExecutor)driver;
 	     ContactMenu.executeScript("arguments[0].click();", DealContact);
 	     Thread.sleep(3000);
+	     // ALL CONTACTS TAB
+	     WebElement allContacts =  driver.findElement(By.id("dealInfoLockHistory"));
+	     JavascriptExecutor all_Contacts = (JavascriptExecutor)driver;
+	     all_Contacts.executeScript("arguments[0].click();", allContacts);
+	     Thread.sleep(3000);
 	  /*   WebElement Close =  driver.findElement(By.className("close_button"));
 	     JavascriptExecutor Button_Close = (JavascriptExecutor)driver;
 	     Button_Close.executeScript("arguments[0].click();", Close);
@@ -127,11 +132,19 @@ public class ES_31_AddContact {
 	     JavascriptExecutor Save =(JavascriptExecutor)driver;
 	     Save.executeScript("arguments[0].click();", SaveContact);
 	     System.out.println("Contact Saved Successfully");
-	     Thread.sleep(5000);
-	     driver.navigate().refresh();
-	    
+	     Thread.sleep(3000);
+	     WebElement addContactClosePopup = driver.findElement(By.id("closePopupBtn"));
+	     JavascriptExecutor addContactPopup = (JavascriptExecutor)driver;
+	     addContactPopup.executeScript("arguments[0].click();", addContactClosePopup);
+	     Thread.sleep(3000);
+	    //  BackButton.click();
+	   WebElement BackButton1= driver.findElement(By.id("navigateContactBack"));
+	     JavascriptExecutor Back_Button1=(JavascriptExecutor)driver;
+	     Back_Button1.executeScript("arguments[0].click();", BackButton1);
+	    // Thread.sleep(5000);
 	     // EDIT CONTACT 
 	     // SORT  ADDED CONTACT
+	      Thread.sleep(3000);
 	      WebElement SelectContacts = driver.findElement(By.id("selectContacts"));
 	      JavascriptExecutor Select_Contacts =(JavascriptExecutor)driver;
 	      Select_Contacts.executeScript("arguments[0].click();", SelectContacts);
@@ -158,7 +171,7 @@ public class ES_31_AddContact {
 	     Search.executeScript("arguments[0].click();", PrefillsSearch);
 	     Thread.sleep(5000);
 	     // Clear Search 
-	     WebElement ClearSearch =driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div[3]/button"));
+	     WebElement ClearSearch =driver.findElement(By.xpath("//*[@id=\"APPLICANT\"]/div[3]/button"));
 	     JavascriptExecutor Clear = (JavascriptExecutor)driver;
 	     Clear.executeScript("arguments[0].click();", ClearSearch);
 	     
@@ -195,24 +208,6 @@ public class ES_31_AddContact {
 	     driver.findElement(By.id("contactNmlsid")).sendKeys("8080yyiyiy89");
 	     driver.findElement(By.id("contactContacttitle")).sendKeys("Agent");
 	     Thread.sleep(3000);
-	     JavascriptExecutor PageScroll = (JavascriptExecutor)driver;
-	     PageScroll.executeScript("window.scrollBy(0,350)", "");
-	     WebElement contactApprovedOn = driver.findElement(By.id("contactApproved"));
-	     JavascriptExecutor Approval_ToggleOn = (JavascriptExecutor)driver;
-	     Approval_ToggleOn.executeScript("arguments[0].click();", contactApprovedOn);
-	     Thread.sleep(3000);
-	     WebElement contactApprovedOff = driver.findElement(By.id("contactApproved"));
-	     JavascriptExecutor Approval_ToggleOff = (JavascriptExecutor)driver;
-	     Approval_ToggleOff.executeScript("arguments[0].click();", contactApprovedOff);
-	     Thread.sleep(3000);
-	     WebElement contactBrokerAssignOn = driver.findElement(By.id("contactBrokerAssign"));
-	     JavascriptExecutor BrokerAssign_ToggleOn = (JavascriptExecutor)driver;
-	     BrokerAssign_ToggleOn.executeScript("arguments[0].click();", contactBrokerAssignOn);
-	     Thread.sleep(3000);
-	     WebElement contactBrokerAssign = driver.findElement(By.id("contactBrokerAssign"));
-	     JavascriptExecutor BrokerAssign_ToggleOff = (JavascriptExecutor)driver;
-	     BrokerAssign_ToggleOff.executeScript("arguments[0].click();", contactBrokerAssign);
-	     Thread.sleep(5000);
 	     WebElement UpdateContact = driver.findElement(By.id("saveContact"));
 	     JavascriptExecutor Update_Contact = (JavascriptExecutor)driver;
 	     Update_Contact.executeScript("arguments[0].click();", UpdateContact);
@@ -221,25 +216,22 @@ public class ES_31_AddContact {
 	   //  driver.navigate().refresh();
 	     System.out.println("Contact Updated Successfully");
 	   
-	     /* WebElement UpdateClosePopup = driver.findElement(By.id("closePopupBtn"));
+	    WebElement UpdateClosePopup = driver.findElement(By.id("closePopupBtn"));
 	     JavascriptExecutor UpdatePopup = (JavascriptExecutor)driver;
 	     UpdatePopup.executeScript("arguments[0].click();", UpdateClosePopup);
-	     Thread.sleep(3000);*/
-	    WebElement BackButton1= driver.findElement(By.id("navigateContactBack"));
-	     JavascriptExecutor Back_Button1=(JavascriptExecutor)driver;
-	     Back_Button1.executeScript("arguments[0].click();", BackButton1);
 	     Thread.sleep(5000);
-	 //    Thread.sleep(5000);
-	     /*   WebElement Prefills_SearchText1 = driver.findElement(By.id("prefillsSearchText"));
+	   
+	     WebElement Prefills_SearchText1 = driver.findElement(By.id("prefillsSearchText"));
 	     JavascriptExecutor Search_Text1 = (JavascriptExecutor)driver;
 	     Search_Text1.executeScript("arguments[0].click();", Prefills_SearchText1);
 	     Thread.sleep(3000);
-	     PrefillsSearchText.sendKeys("Whales");
+	     Prefills_SearchText1.sendKeys("marc");
 	     Thread.sleep(3000);
 	     WebElement Prefills_Search1= driver.findElement(By.id("prefillsSearch"));
 	     JavascriptExecutor Search2 =(JavascriptExecutor)driver;
 	     Search2.executeScript("arguments[0].click();", Prefills_Search1);
 	    //ADD CONTACT TO BROKER
+	     Thread.sleep(3000);
 	     WebElement AddContacts = driver.findElement(By.id("addContacts-0"));
 	     JavascriptExecutor Add_Contacts =(JavascriptExecutor)driver;
 	     Add_Contacts.executeScript("arguments[0].click();", AddContacts);
@@ -255,91 +247,12 @@ public class ES_31_AddContact {
 	     WebElement DeletestatusYes = driver.findElement(By.id("delete-status-yes"));
 		    JavascriptExecutor  Delete_statusYes =(JavascriptExecutor)driver;
 		    Delete_statusYes.executeScript("arguments[0].click();", DeletestatusYes);
-	    
 		    Thread.sleep(3000);
 		    WebElement ContactAssignedClosePopup = driver.findElement(By.id("closePopupBtn"));
 		     JavascriptExecutor ContactAssigned_ClosePopup = (JavascriptExecutor)driver;
 		     ContactAssigned_ClosePopup.executeScript("arguments[0].click();", ContactAssignedClosePopup);    
 	   //  driver.navigate().refresh();
 	     Thread.sleep(3000);
-	  //   driver.quit();
-	     */
-	     //DELETE CONTACT
-	   //AGAIN SEARCH BASED ON USER NAME 
-	   /*  WebElement Prefills_SearchText2 = driver.findElement(By.id("prefillsSearchText"));
-	     JavascriptExecutor Search_Text2 = (JavascriptExecutor)driver;
-	     Search_Text2.executeScript("arguments[0].click();", Prefills_SearchText2);
-	     Thread.sleep(3000);
-	     PrefillsSearchText.sendKeys("Marc");
-	     Thread.sleep(3000);
-	     WebElement Prefills_Search2= driver.findElement(By.id("prefillsSearch"));
-	     JavascriptExecutor Search_2 =(JavascriptExecutor)driver;
-	     Search_2.executeScript("arguments[0].click();", Prefills_Search2);
-	     Thread.sleep(5000);
-	   */ 
-	     WebElement DeleteContacts = driver.findElement(By.id("deleteContacts-0"));
-	     JavascriptExecutor Delete_Contacts =(JavascriptExecutor)driver;
-	     Delete_Contacts.executeScript("arguments[0].click();", DeleteContacts);
-	     Thread.sleep(3000);
-	  /*   WebElement DeleteClosePopup = driver.findElement(By.id("closePopupBtn"));
-	     JavascriptExecutor Delete_ClosePopup = (JavascriptExecutor)driver;
-	     Delete_ClosePopup.executeScript("arguments[0].click();", DeleteClosePopup);
-	     Thread.sleep(3000);
-	     // Edit Contact 
-	     
-		  */  WebElement DeleteContactNo = driver.findElement(By.xpath("delete-contact-no"));
-		    JavascriptExecutor  Delete_ContactNo =(JavascriptExecutor)driver;
-		    Delete_ContactNo.executeScript("arguments[0].click();", DeleteContactNo);
-		     Thread.sleep(3000);
-		     WebElement AddContacts2 = driver.findElement(By.id("addContacts-0"));
-		     JavascriptExecutor Add_Contacts2 =(JavascriptExecutor)driver;
-		     Add_Contacts2.executeScript("arguments[0].click();", AddContacts2);
-		     Thread.sleep(3000);
-		     WebElement DeleteContactYes = driver.findElement(By.xpath("delete-contact-yes"));
-			    JavascriptExecutor  Delete_ContactYes =(JavascriptExecutor)driver;
-			    Delete_ContactYes.executeScript("arguments[0].click();", DeleteContactYes);
-	     
-	   //  Prefills_Search.click();
-	    //Per Page search 
-	     Thread.sleep(3000);
-	     JavascriptExecutor scroll = (JavascriptExecutor)driver;
-	     scroll.executeScript("window.scrollBy(0,400)", "");
-	     Thread.sleep(5000);
-	     WebElement PerPage =driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div[2]/div/div[4]/nav/div[1]/select"));
-	     JavascriptExecutor Page = (JavascriptExecutor)driver;
-	     Page.executeScript("arguments[0].click();", PerPage);
-	     PerPage.sendKeys(Keys.ARROW_DOWN);
-	     PerPage.sendKeys(Keys.ARROW_DOWN);
-	     PerPage.sendKeys(Keys.ARROW_DOWN);
-	     PerPage.sendKeys(Keys.ENTER);
-	     Thread.sleep(3000);
-	     JavascriptExecutor scroll1 = (JavascriptExecutor)driver;
-	     scroll1.executeScript("window.scrollBy(0,600)", "");
-	     Thread.sleep(5000);
-	     WebElement PerPages =driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div[2]/div/div[4]/nav/div[1]/select"));
-	     JavascriptExecutor Pages = (JavascriptExecutor)driver;
-	     Pages.executeScript("arguments[0].click();", PerPages);
-	     PerPages.sendKeys(Keys.ARROW_UP);
-	     PerPages.sendKeys(Keys.ARROW_UP);
-	     PerPages.sendKeys(Keys.ARROW_UP);
-	     PerPage.sendKeys(Keys.ENTER);
-	     Thread.sleep(5000);
-	   //Page Navigation
-	     WebElement NextPage = driver.findElement(By.id("pagination-next-page"));
-	     JavascriptExecutor NextClick = (JavascriptExecutor)driver;
-	     NextClick.executeScript("arguments[0].click();", NextPage);
-	     Thread.sleep(3000);
-	     WebElement LastPage = driver.findElement(By.id("pagination-last-page"));
-	     JavascriptExecutor LastPageClick = (JavascriptExecutor)driver;
-	     LastPageClick.executeScript("arguments[0].click();", LastPage);
-	     Thread.sleep(3000);
-	     WebElement PreviousPage = driver.findElement(By.id("pagination-previous-page"));
-	     JavascriptExecutor PreviousPageClick = (JavascriptExecutor)driver;
-	     PreviousPageClick.executeScript("arguments[0].click();", PreviousPage);
-	     Thread.sleep(3000);
-	     WebElement FirstPage = driver.findElement(By.id("pagination-first-page"));
-	     JavascriptExecutor FirstPageClick = (JavascriptExecutor)driver;
-	     FirstPageClick.executeScript("arguments[0].click();", FirstPage);
 	     driver.quit();
   }
 }
