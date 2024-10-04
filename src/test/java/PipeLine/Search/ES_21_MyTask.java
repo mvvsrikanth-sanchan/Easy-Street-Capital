@@ -113,8 +113,8 @@ public class ES_21_MyTask {
 	    LoanId.sendKeys(Keys.ARROW_DOWN);
 	    LoanId.sendKeys(Keys.ENTER);
 	    Thread.sleep(3000); 
-	    //TASK NOTES
-	    WebElement  TaskNote = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div/div/div/div[3]/div/div[2]/div/div[3]/div/div/div[2]/div/div[6]/div/div/div[2]"));
+	    //TASK NOTES 
+	    WebElement  TaskNote = driver.findElement(By.xpath("//*[@id=\"taskText\"]/div[2]/div[1]"));
 	    JavascriptExecutor AddTask1 = (JavascriptExecutor)driver;
 	    AddTask1.executeScript("arguments[0].click();", TaskNote);
 	    Thread.sleep(3000);

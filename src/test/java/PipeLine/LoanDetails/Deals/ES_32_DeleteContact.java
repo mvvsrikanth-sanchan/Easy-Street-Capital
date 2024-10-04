@@ -55,22 +55,12 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     JavascriptExecutor ContactMenu = (JavascriptExecutor)driver;
     ContactMenu.executeScript("arguments[0].click();", DealContact);
     Thread.sleep(3000);
- /*   WebElement Close =  driver.findElement(By.className("close_button"));
-    JavascriptExecutor Button_Close = (JavascriptExecutor)driver;
-    Button_Close.executeScript("arguments[0].click();", Close);
-    driver.navigate().refresh();
-    
-    WebElement ChooseAnother =  driver.findElement(By.className("//*[@id=\"messagepopup\"]/div/div/div/div[2]/button"));
-    JavascriptExecutor Choose_Another = (JavascriptExecutor)driver;
-    Choose_Another.executeScript("arguments[0].click();", ChooseAnother);
+
+    // ALL CONTACTS TAB
+    WebElement allContacts =  driver.findElement(By.id("dealInfoLockHistory"));
+    JavascriptExecutor all_Contacts = (JavascriptExecutor)driver;
+    all_Contacts.executeScript("arguments[0].click();", allContacts);
     Thread.sleep(3000);
-    driver.navigate().refresh();
-    WebElement AssignAsActiveBroker =  driver.findElement(By.className("//*[@id=\"messagepopup\"]/div/div/div/div[2]/div/div/button"));
-    JavascriptExecutor ActiveBroker = (JavascriptExecutor)driver;
-    ActiveBroker.executeScript("arguments[0].click();", AssignAsActiveBroker);
-    Thread.sleep(3000);
-    */
-   
    WebElement AddContact = driver.findElement(By.id("addNewContact"));
     JavascriptExecutor Add= (JavascriptExecutor)driver;
     Add.executeScript("arguments[0].click();", AddContact);
@@ -86,10 +76,10 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     JavascriptExecutor Add1= (JavascriptExecutor)driver;
     Add1.executeScript("arguments[0].click();", Add_Contact);
     Thread.sleep(3000);
-    driver.findElement(By.id("contactFirstname")).sendKeys("Aston");
-    driver.findElement(By.id("contactLastname")).sendKeys("Fins");
+    driver.findElement(By.id("contactFirstname")).sendKeys("Nikky");
+    driver.findElement(By.id("contactLastname")).sendKeys("Deos");
     WebElement Email=driver.findElement(By.id("contactEmail"));
-    Email.sendKeys("Aston");
+    Email.sendKeys("Nikky");
   
     
    driver.findElement(By.id("contactMobile")).sendKeys("(834) 131-7062");
@@ -115,7 +105,7 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     js.executeScript("arguments[0].value = '';", Email);
   
     Thread.sleep(3000);
-    Email.sendKeys("Aston670fins@yopmail.com");
+    Email.sendKeys("Nikky67090@yopmail.com");
     
     Thread.sleep(3000);
     WebElement SaveContact = driver.findElement(By.id("saveContact"));
@@ -123,9 +113,15 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     Save.executeScript("arguments[0].click();", SaveContact);
     System.out.println("Contact Saved Successfully");
     Thread.sleep(5000);
-    driver.navigate().refresh();
-   
-    // EDIT CONTACT 
+    WebElement addContactClosePopup = driver.findElement(By.id("closePopupBtn"));
+    JavascriptExecutor addContactPopup = (JavascriptExecutor)driver;
+    addContactPopup.executeScript("arguments[0].click();", addContactClosePopup);
+    Thread.sleep(3000);
+  /* //  BackButton.click();
+	   WebElement BackButton1= driver.findElement(By.id("navigateContactBack"));
+	     JavascriptExecutor Back_Button1=(JavascriptExecutor)driver;
+	     Back_Button1.executeScript("arguments[0].click();", BackButton1); */
+	  // EDIT CONTACT 
     // SORT  ADDED CONTACT
      WebElement SelectContacts = driver.findElement(By.id("selectContacts"));
      JavascriptExecutor Select_Contacts =(JavascriptExecutor)driver;
@@ -147,13 +143,13 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     JavascriptExecutor SearchText = (JavascriptExecutor)driver;
     SearchText.executeScript("arguments[0].click();", PrefillsSearchText);
     Thread.sleep(3000);
-    PrefillsSearchText.sendKeys("Aston");
+    PrefillsSearchText.sendKeys("Nikky");
     WebElement PrefillsSearch= driver.findElement(By.id("prefillsSearch"));
     JavascriptExecutor Search =(JavascriptExecutor)driver;
     Search.executeScript("arguments[0].click();", PrefillsSearch);
     Thread.sleep(5000);
     // Clear Search 
-    WebElement ClearSearch =driver.findElement(By.xpath("/html/body/div/div/div/div[2]/div/div[3]/button"));
+    WebElement ClearSearch =driver.findElement(By.xpath("//*[@id=\"APPLICANT\"]/div[3]/button"));
     JavascriptExecutor Clear = (JavascriptExecutor)driver;
     Clear.executeScript("arguments[0].click();", ClearSearch);
     
@@ -163,7 +159,7 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     JavascriptExecutor Search_Text = (JavascriptExecutor)driver;
     Search_Text.executeScript("arguments[0].click();", Prefills_SearchText);
     Thread.sleep(3000);
-    PrefillsSearchText.sendKeys("Aston");
+    PrefillsSearchText.sendKeys("Nikky");
     Thread.sleep(3000);
     WebElement Prefills_Search= driver.findElement(By.id("prefillsSearch"));
     JavascriptExecutor Search1 =(JavascriptExecutor)driver;
@@ -174,7 +170,7 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     JavascriptExecutor Edit = (JavascriptExecutor)driver;
     Edit.executeScript("arguments[0].click();", EditContact);
     Thread.sleep(3000);
-    driver.findElement(By.id("contactCompany")).sendKeys("Aston's");
+    driver.findElement(By.id("contactCompany")).sendKeys("Nikky");
     WebElement ContactDropdown = driver.findElement(By.id("contactContact_type"));
     JavascriptExecutor Dropdown = (JavascriptExecutor)driver;
     Thread.sleep(3000);
@@ -190,24 +186,6 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     driver.findElement(By.id("contactNmlsid")).sendKeys("8080yyiyiy89");
     driver.findElement(By.id("contactContacttitle")).sendKeys("Agent");
     Thread.sleep(3000);
-    JavascriptExecutor PageScroll = (JavascriptExecutor)driver;
-    PageScroll.executeScript("window.scrollBy(0,350)", "");
-    WebElement contactApprovedOn = driver.findElement(By.id("contactApproved"));
-    JavascriptExecutor Approval_ToggleOn = (JavascriptExecutor)driver;
-    Approval_ToggleOn.executeScript("arguments[0].click();", contactApprovedOn);
-    Thread.sleep(3000);
-    WebElement contactApprovedOff = driver.findElement(By.id("contactApproved"));
-    JavascriptExecutor Approval_ToggleOff = (JavascriptExecutor)driver;
-    Approval_ToggleOff.executeScript("arguments[0].click();", contactApprovedOff);
-    Thread.sleep(3000);
-    WebElement contactBrokerAssignOn = driver.findElement(By.id("contactBrokerAssign"));
-    JavascriptExecutor BrokerAssign_ToggleOn = (JavascriptExecutor)driver;
-    BrokerAssign_ToggleOn.executeScript("arguments[0].click();", contactBrokerAssignOn);
-    Thread.sleep(3000);
-    WebElement contactBrokerAssign = driver.findElement(By.id("contactBrokerAssign"));
-    JavascriptExecutor BrokerAssign_ToggleOff = (JavascriptExecutor)driver;
-    BrokerAssign_ToggleOff.executeScript("arguments[0].click();", contactBrokerAssign);
-    Thread.sleep(5000);
     WebElement UpdateContact = driver.findElement(By.id("saveContact"));
     JavascriptExecutor Update_Contact = (JavascriptExecutor)driver;
     Update_Contact.executeScript("arguments[0].click();", UpdateContact);
@@ -216,10 +194,20 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
   //  driver.navigate().refresh();
     System.out.println("Contact Updated Successfully");
   
-    
-     WebElement BackButton1= driver.findElement(By.id("navigateContactBack"));
-    JavascriptExecutor Back_Button1=(JavascriptExecutor)driver;
-    Back_Button1.executeScript("arguments[0].click();", BackButton1);
+    WebElement UpdateClosePopup = driver.findElement(By.id("closePopupBtn"));
+    JavascriptExecutor UpdatePopup = (JavascriptExecutor)driver;
+    UpdatePopup.executeScript("arguments[0].click();", UpdateClosePopup);
+    Thread.sleep(5000);
+   
+    WebElement Prefills_SearchText1 = driver.findElement(By.id("prefillsSearchText"));
+    JavascriptExecutor Search_Text1 = (JavascriptExecutor)driver;
+    Search_Text1.executeScript("arguments[0].click();", Prefills_SearchText1);
+    Thread.sleep(3000);
+    Prefills_SearchText1.sendKeys("Nikky");
+    Thread.sleep(3000);
+    WebElement Prefills_Search1= driver.findElement(By.id("prefillsSearch"));
+    JavascriptExecutor Search2 =(JavascriptExecutor)driver;
+    Search2.executeScript("arguments[0].click();", Prefills_Search1);
     Thread.sleep(5000);
     
     //DELETE CONTACT
@@ -233,23 +221,28 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
 	    JavascriptExecutor  Delete_ContactNo =(JavascriptExecutor)driver;
 	    Delete_ContactNo.executeScript("arguments[0].click();", DeleteContactNo);
 	     Thread.sleep(3000);
-	     WebElement AddContacts2 = driver.findElement(By.id("deleteContacts-0"));
-	     JavascriptExecutor Add_Contacts2 =(JavascriptExecutor)driver;
-	     Add_Contacts2.executeScript("arguments[0].click();", AddContacts2);
+	     WebElement DeleteContact = driver.findElement(By.id("deleteContacts-0"));
+	     JavascriptExecutor Delete_Contact =(JavascriptExecutor)driver;
+	     Delete_Contact.executeScript("arguments[0].click();", DeleteContact);
 	     Thread.sleep(3000);
 	     WebElement DeleteContactYes = driver.findElement(By.id("delete-contact-yes"));
 		    JavascriptExecutor  Delete_ContactYes =(JavascriptExecutor)driver;
 		    Delete_ContactYes.executeScript("arguments[0].click();", DeleteContactYes);
 		    Thread.sleep(3000);
 		    System.out.println("Contact Deleted Successfully");
-		    driver.navigate().refresh();
+		    WebElement deleteContactClosePopup = driver.findElement(By.id("closePopupBtn"));
+		    JavascriptExecutor DeletePopup = (JavascriptExecutor)driver;
+		    DeletePopup.executeScript("arguments[0].click();", deleteContactClosePopup);
+		    Thread.sleep(5000);
   //  Prefills_Search.click();
    //Per Page search 
+    Thread.sleep(3000);
+  //Per Page search 
     Thread.sleep(3000);
     JavascriptExecutor scroll = (JavascriptExecutor)driver;
     scroll.executeScript("window.scrollBy(0,400)", "");
     Thread.sleep(5000);
-    WebElement PerPage =driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div[2]/div/div[4]/nav/div[1]/select"));
+    WebElement PerPage =driver.findElement(By.xpath("//*[@id=\"APPLICANT\"]/div[4]/nav/div[1]/select"));
     JavascriptExecutor Page = (JavascriptExecutor)driver;
     Page.executeScript("arguments[0].click();", PerPage);
     PerPage.sendKeys(Keys.ARROW_DOWN);
@@ -260,7 +253,7 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     JavascriptExecutor scroll1 = (JavascriptExecutor)driver;
     scroll1.executeScript("window.scrollBy(0,600)", "");
     Thread.sleep(5000);
-    WebElement PerPages =driver.findElement(By.xpath("//*[@id=\"layout-wrapper\"]/div/div[2]/div/div[4]/nav/div[1]/select"));
+    WebElement PerPages =driver.findElement(By.xpath("//*[@id=\"APPLICANT\"]/div[4]/nav/div[1]/select"));
     JavascriptExecutor Pages = (JavascriptExecutor)driver;
     Pages.executeScript("arguments[0].click();", PerPages);
     PerPages.sendKeys(Keys.ARROW_UP);
@@ -284,6 +277,6 @@ WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1)
     WebElement FirstPage = driver.findElement(By.id("pagination-first-page"));
     JavascriptExecutor FirstPageClick = (JavascriptExecutor)driver;
     FirstPageClick.executeScript("arguments[0].click();", FirstPage);
-    driver.quit();
+   
   }
 }
