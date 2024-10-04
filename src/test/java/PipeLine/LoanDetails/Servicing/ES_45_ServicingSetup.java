@@ -30,46 +30,65 @@ public class ES_45_ServicingSetup {
 		
 	    driver.findElement(By.id("loginButton")).click();
 	    Thread.sleep(5000);
-WebElement LoanId = driver.findElement(By.cssSelector("#row-0 > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)"));
-
+	    //#row-3
+//WebElement LoanId = driver.findElement(By.cssSelector("#row-4 > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)"));
+WebElement LoanId = driver.findElement(By.cssSelector("#row-3 > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)"));
 Actions LoanIdSelect = new Actions(driver);
 LoanIdSelect.moveToElement(LoanId).perform();
-WebElement DealNavigation = driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div/div/div/div[3]/div/div[2]/div/div/div[2]/div[3]/div[1]/div/div/ul/li[2]/a"));
-JavascriptExecutor Deal= (JavascriptExecutor)driver;
-Deal.executeScript("arguments[0].click();", DealNavigation);
-Thread.sleep(3000);
 //CLICKING ON SERVICING MENU
-WebElement ServicingMenu = driver.findElement(By.id("servicingMenu"));
-JavascriptExecutor Servicing_Menu= (JavascriptExecutor)driver;
-Servicing_Menu.executeScript("arguments[0].click();", ServicingMenu);
+WebElement Servicing= driver.findElement(By.xpath("/html/body/div/div/div[2]/div/div/div/div/div[3]/div/div[2]/div/div/div[2]/div[4]/div[1]/div/div/ul/li[6]/a"));
+JavascriptExecutor Servicingmenu= (JavascriptExecutor)driver;
+Servicingmenu.executeScript("arguments[0].click();", Servicing);
 Thread.sleep(5000);
 //SERVICING SETUP
-WebElement ServicingSetup = driver.findElement(By.id("servicing-ServicingSetup"));
+/*WebElement ServicingSetup = driver.findElement(By.id("servicing-ServicingSetup"));
 JavascriptExecutor Servicing_Setup= (JavascriptExecutor)driver;
 Servicing_Setup.executeScript("arguments[0].click();", ServicingSetup);
-Thread.sleep(5000);
+Thread.sleep(5000);*/
 //LOAN SETUP
 // Locate the button 
-WebElement Unlockbutton = driver.findElement(By.id("saveandlockbtn"));
+WebElement Unlockbutton = driver.findElement(By.id("unlockbtn"));
+
 JavascriptExecutor Unlock_Setup= (JavascriptExecutor)driver;
+
 Unlock_Setup.executeScript("arguments[0].click();", Unlockbutton);
 
-if (Unlockbutton.isEnabled()) {
-    System.out.println("Button is unlocked. Proceeding with further automation...");
-    
-        
-} else {
-    System.out.println("Button is locked. Attempting to unlock...");
-    enableButton(driver);
-    if (Unlockbutton.isEnabled()) {
-        System.out.println("Button is now enabled. Proceeding with further automation...");
-        Unlockbutton.click();
-        // Add further test steps here
-    } else {
-        System.out.println("Button could not be enabled.");
-    }
+ 
+
+if (Unlockbutton.isEnabled()== true){
+
+System.out.println("Button is unlocked. Proceeding with further automation...");
+
 }
-    Thread.sleep(3000);
+
+else
+
+{
+
+System.out.println("Button is locked. Attempting to unlock...");
+
+Unlockbutton.click();
+
+if (Unlockbutton.isEnabled()== true){
+
+System.out.println("Button is unlocked. Proceeding with further automation...");
+
+}
+
+ 
+
+// Add further test steps here
+
+ else  {
+
+
+System.out.println("Button could not be enabled.");
+
+}
+
+}
+}
+    
     
     /*
 
@@ -159,11 +178,11 @@ Thread.sleep(2000);
 driver.navigate().refresh();
 Thread.sleep(2000);
 driver.quit();*/
-  }
+  
 
 
-private void enableButton(ChromeDriver driver) {
+/*private void enableButton(ChromeDriver driver) {
 	// TODO Auto-generated method stub
 	WebElement unlockButton = driver.findElement(By.id("unlockbtn"));
-    unlockButton.click();
-}}
+    unlockButton.click();*/
+}
