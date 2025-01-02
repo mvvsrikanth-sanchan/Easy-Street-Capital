@@ -50,13 +50,14 @@ public class ES_20_AdvanceSearch {
 	    JavascriptExecutor Searches = (JavascriptExecutor)driver;
 	    Searches.executeScript("arguments[0].click();", AdvaceSearchs);
 	   
-	    Thread.sleep(2000);
+	    Thread.sleep(3000);
 	    //GENERAL INFO
 	    driver.findElement(By.id("generalInfo-borrowerfirstname")).sendKeys("srikanth");
 	    driver.findElement(By.id("generalInfo-borrowerlastname")).sendKeys("mvv");
 	    driver.findElement(By.id("generalInfo-borroweraddress")).sendKeys("california");
 	    driver.findElement(By.id("generalInfo-entityname")).sendKeys("lukas");
 	    driver.findElement(By.id("generalInfo-propertyaddress")).sendKeys("1-201/1 california ");
+	    Thread.sleep(2000);
 	    WebElement propertyType = driver.findElement(By.id("generalInfo-propertytype"));
 	    JavascriptExecutor propertytype = (JavascriptExecutor)driver;
 	    propertytype.executeScript("arguments[0].click();", propertyType);
@@ -198,48 +199,49 @@ public class ES_20_AdvanceSearch {
 	  /*  WebDriverWait  category = new WebDriverWait(driver, Duration.ofSeconds(30));
 	    category.until(ExpectedConditions.elementToBeClickable(By.id("filterscategory"))).click();
 	    Thread.sleep(3000); 
-	   
+	   */
 	    WebElement Categorydropdown = driver.findElement(By.id("filterscategory"));
 	    JavascriptExecutor Category = (JavascriptExecutor)driver;
 	    Category.executeScript("arguments[0].click();", Categorydropdown);
 	    Thread.sleep(3000);
-	    Categorydropdown.sendKeys("Keys.ARROW_DOWN");
+	    Categorydropdown.sendKeys("ABS Due 3/1");
 	 // Categorydropdown.sendKeys(Keys.ARROW_DOWN);
-	 //   Categorydropdown.sendKeys(Keys.ENTER);
-	  //  Thread.sleep(3000); */
+	    Thread.sleep(3000);
+       Categorydropdown.sendKeys(Keys.ENTER);
+	  //  Thread.sleep(3000); 
 	    WebElement broker = driver.findElement(By.id("brokerFilters"));
 	    broker.sendKeys("Sandhya S");
 	    Thread.sleep(3000);
 	    WebDriverWait User = new WebDriverWait(driver, Duration.ofSeconds(30));
 	    User.until(ExpectedConditions.elementToBeClickable(By.id("filterUser"))).click();
 	    WebElement user = driver.findElement(By.id("filterUser"));
-	   // JavascriptExecutor userList =(JavascriptExecutor)driver;
-	 //   userList.executeScript("arguments[0].click();", user);
-	    user.sendKeys(Keys.ARROW_DOWN);
-	    user.sendKeys(Keys.ARROW_DOWN);
-	    user.sendKeys(Keys.ENTER);
+	   JavascriptExecutor userList =(JavascriptExecutor)driver;
+       userList.executeScript("arguments[0].click();", user);
+	    user.sendKeys("anu14");
+	    //user.sendKeys(Keys.ARROW_DOWN);
+	    Thread.sleep(3000);
+	   user.sendKeys(Keys.ENTER);
 	    Thread.sleep(3000);
 	    // Reset resetAdvancedSearchBtn   searchOptionsClose
-	    WebElement reset = driver.findElement(By.id("resetAdvancedSearchBtn"));
+	    WebDriverWait reset = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    reset.until(ExpectedConditions.elementToBeClickable(By.id("resetAdvancedSearchBtn"))).click();
+	  /*  WebElement reset = driver.findElement(By.id("resetAdvancedSearchBtn"));
 	    JavascriptExecutor resetAll =(JavascriptExecutor)driver;
-	    resetAll.executeScript("arguments[0].click(),", reset);
+	    resetAll.executeScript("arguments[0].click(),", reset);*/
 	    Thread.sleep(3000);
-	    WebElement resetClose = driver.findElement(By.id("searchOptionsClose"));
+	    WebDriverWait resetClose = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    reset.until(ExpectedConditions.elementToBeClickable(By.id("searchOptionsClose"))).click();
+	  /*  WebElement resetClose = driver.findElement(By.id("searchOptionsClose"));
 	    JavascriptExecutor ResetClose =(JavascriptExecutor)driver;
-	    ResetClose.executeScript("arguments[0].click(),", resetClose);
+	    ResetClose.executeScript("arguments[0].click(),", resetClose);*/
 	    Thread.sleep(3000);
-	    WebElement reset1 = driver.findElement(By.id("resetAdvancedSearchBtn"));
-	    JavascriptExecutor resetAll1 =(JavascriptExecutor)driver;
-	    resetAll1.executeScript("arguments[0].click(),", reset1);
+	    WebDriverWait Reset = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    Reset.until(ExpectedConditions.elementToBeClickable(By.id("resetAdvancedSearchBtn"))).click();
 	    Thread.sleep(3000);
-	    WebElement resetYes = driver.findElement(By.id("resetAdvancedSearchBtn"));
-	    JavascriptExecutor reset_Yes =(JavascriptExecutor)driver;
-	    reset_Yes.executeScript("arguments[0].click(),", resetYes);
+	    WebDriverWait resetYes = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    Reset.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div/div/div[2]/div/div/div/div/div[3]/div/div[2]/div/div/div/button[2]"))).click();
 	    Thread.sleep(3000);
-	    WebElement closePopup = driver.findElement(By.id("closePopupBtn"));
-	    JavascriptExecutor close_Popup =(JavascriptExecutor)driver;
-	    close_Popup.executeScript("arguments[0].click(),", closePopup);
-	    System.out.println("Entered Data Reset successfully");
+	    WebDriverWait ClosePopup = new WebDriverWait(driver, Duration.ofSeconds(30));
 	    Thread.sleep(5000);
 	  //GENERAL INFO
 	    driver.findElement(By.id("generalInfo-borrowerfirstname")).sendKeys("srikanth");
@@ -247,10 +249,15 @@ public class ES_20_AdvanceSearch {
 	    driver.findElement(By.id("generalInfo-borroweraddress")).sendKeys("california");
 	    driver.findElement(By.id("generalInfo-entityname")).sendKeys("lukas");
 	    driver.findElement(By.id("generalInfo-propertyaddress")).sendKeys("1-201/1 california ");
+	    Thread.sleep(2000);
+	    WebElement propertyTypes = driver.findElement(By.id("generalInfo-propertytype"));
+	    JavascriptExecutor propertytypes = (JavascriptExecutor)driver;
+	    propertytypes.executeScript("arguments[0].click();", propertyTypes);
+	    propertyTypes.sendKeys("Triplex");
 	    Thread.sleep(3000);
-	    Thread.sleep(5000);
+	   
 	  //DATE AND RANGE  
-	  propertyType.sendKeys("09/23/2024");
+	  StartDate.sendKeys("09/23/2024");
 	  Thread.sleep(3000);
 	  createdEndDate.sendKeys("11/10/2025");
 	  Thread.sleep(3000);

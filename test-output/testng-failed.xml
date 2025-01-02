@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="PipeLine.LoanDetails.Servicing.ES_45_ServicingSetup">
+      <class name="NewLoans.Borrower.ES_06_NewBorrower_Refinancings__EasyFIX">
         <methods>
-          <include name="ServicingSetup"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="NewBorrowerRefinancingsEasyFIX"/>
         </methods>
-      </class> <!-- PipeLine.LoanDetails.Servicing.ES_45_ServicingSetup -->
+      </class> <!-- NewLoans.Borrower.ES_06_NewBorrower_Refinancings__EasyFIX -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

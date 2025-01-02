@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="PipeLine.LoanDetails.UnderWriting.ES_36_BorrowerExposure"/>
+      <class name="Login.ES_01_ForgotPassword"/>
+      <class name="Administration.LookUps.Needs.ES_12_2_AddDefaultNeeds"/>
+      <class name="PipeLine.LoanDetails.ClosingAndFunding.ES_44_WireInstructions"/>
+      <class name="Administration.FundManagement.Es_54_Investors"/>
+      <class name="PipeLine.LoanDetails.Servicing.ES_47_FeeManagement"/>
+      <class name="utilities.Readpropertyfile"/>
+      <class name="PipeLine.LoanDetails.Deals.ES_31_AddContact"/>
+      <class name="PipeLine.LoanDetails.Deals.ES_34_Leads"/>
+      <class name="PipeLine.LoanDetails.Deals.ES_32_DeleteContact"/>
+      <class name="PipeLine.Search.ES_22_MostRecentLoans"/>
+      <class name="Administration.ES_06_FormManager"/>
+      <class name="PipeLine.Search.ES_26_ConfigurePipeline"/>
+      <class name="PipeLine.LoanDetails.Draws.ES_49_OrderDrawRequest"/>
+      <class name="PipeLine.LoanDetails.ClosingAndFunding.ES_42_Fees"/>
+      <class name="Administration.LookUps.DropDownManagement.ES_11_1_EditBorrowerCommunicationMethods"/>
+      <class name="Administration.LookUps.LOSFEES.ES_14_EditLOSFEES"/>
+      <class name="PipeLine.LoanDetails.Servicing.ES_46_RecurringBilling"/>
+      <class name="Administration.ES_09_EditUserManagement"/>
+      <class name="PipeLine.LoanDetails.Draws.ES_50_AddOrderDrawRequest"/>
+      <class name="base.BaseTest"/>
+      <class name="Administration.ES_16_DeleteFormManager"/>
+      <class name="PipeLine.Search.ES_25_Search"/>
+      <class name="Administration.LookUps.Needs.ES_12_1_EditNeedsTest"/>
+      <class name="PipeLine.Search.ES_23_ShareSearch"/>
+      <class name="PipeLine.LoanDetails.ClosingAndFunding.ES_43_RateAndPoints"/>
+      <class name="Administration.ES_07_TermsheetPrifills"/>
+      <class name="PipeLine.LoanDetails.Deals.ES_33_AddHMDA"/>
+      <class name="Administration.LookUps.Needs.ES_12_0_AddNeeds"/>
+      <class name="PipeLine.LoanDetails.Servicing.ES_45_ServicingSetup"/>
+      <class name="Administration.ES_10_EditFormPackages"/>
+      <class name="PipeLine.LoanDetails.Deals.ES_30_AddNewEntity"/>
+      <class name="utilities.ReadxlData"/>
+      <class name="Administration.LookUps.DropDownManagement.ES_11_0_BorrowerCommunicationMethods"/>
+      <class name="Reports.ES_51_Form1098"/>
+      <class name="PipeLine.Search.ES_21_MyTask"/>
+      <class name="PipeLine.LoanDetails.UnderWriting.ES_38_ToolAndWorkFlow"/>
+      <class name="utilities.Testutils"/>
+      <class name="Administration.FundManagement.ES_52_CreateFund"/>
+      <class name="MyAccount.ES_24_MyAccount"/>
+      <class name="Administration.LookUps.Needs.ES_12_3_EditDefaultNeeds"/>
+      <class name="Performance.InsertMultipleRecords"/>
+      <class name="NewLoans.Borrower.ES_04_NewBorrower_Refinancings__EasyBuild"/>
+      <class name="NewLoans.Broker.ES_20_NewBROKER_Purchase_EasyBuild"/>
+      <class name="PipeLine.LoanDetails.Servicing.ES_48_PayOff"/>
+      <class name="Login.ES_02_Login"/>
+      <class name="PipeLine.LoanDetails.DashBoard.ES_27_LoanStagesNavigation"/>
+      <class name="Administration.LookUps.ProgramType.ES_12_ProgramType"/>
+      <class name="Administration.FundManagement.ES_53_Fund_Summary"/>
+      <class name="NewLoans.Borrower.ES_03_NewBorrower_Purchase_EasyBuild"/>
+      <class name="Administration.ES_15_EditFormManager"/>
+      <class name="PipeLine.LoanDetails.Processing.ES_40_Credits"/>
+      <class name="PipeLine.SearchData"/>
+      <class name="PipeLine.LoanDetails.UnderWriting.ES_37_FILES"/>
+      <class name="Administration.LookUps.DropDownManagement.ES_05_1_EditAcquisitionType"/>
+      <class name="NewLoans.Borrower.ES_18_NewBorrower_Purchase_EasyFIX"/>
+      <class name="PipeLine.LoanDetails.Processing.ES_39_Forms"/>
+      <class name="PipeLine.Search.ES_20_AdvanceSearch"/>
+      <class name="Administration.LookUps.LOSFEES.ES_13_LOSFEES"/>
+      <class name="PipeLine.LoanDetails.ClosingAndFunding.ES_41_ClearToClose"/>
+      <class name="PipeLine.LoanDetails.DashBoard.ES_28_DashBoard"/>
+      <class name="NewLoans.Borrower.ES_19_NewBorrower_Refinancings__EasyFIX"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
